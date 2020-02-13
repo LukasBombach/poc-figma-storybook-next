@@ -1,12 +1,18 @@
 import { Button } from "ui-library";
+import "ui-library/lib/index.css";
 
 export default function HomePage() {
   return (
-    <div>
-      <h1>Welcome to t-online</h1>
+    <main>
       <p>
-        <Button test="">I'm a button</Button>
+        <Button>Button</Button>
       </p>
-    </div>
+      <p>
+        <Button type="primary">Primary</Button>
+      </p>
+      <p>
+        <Button type="secondary">Secondary</Button>
+      </p>
+    </main>
   );
 }

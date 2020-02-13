@@ -7,8 +7,9 @@
     "jsx": "react",
     "resolveJsonModule": true,
     "strict": true,
-    "target": "ESNext"
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types", "types"]
   },
-  "include": ["components/**/*"],
-  "exclude": ["components/**/*.stories.tsx"]
+  "include": ["src"],
+  "exclude": ["src/**/*.stories.tsx"]
 }

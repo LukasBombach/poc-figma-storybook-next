@@ -1,10 +1,13 @@
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
+import ignore from "rollup-plugin-ignore";
+import postcss from "rollup-plugin-postcss";
+import linaria from "linaria/rollup";
 import pkg from "./package.json";
 
 export default {
-  input: "components/index.ts",
+  input: "src/index.ts",
   output: [
     {
       file: pkg.main,
@@ -17,10 +20,15 @@ export default {
   ],
   external: ["react"],
   plugins: [
+    ignore(["linaria"]),
     resolve(),
     commonjs(),
     typescript({
       useTsconfigDeclarationDir: true,
     }),
+    postcss({
+      extract: pkg.style,
+    }),
+    linaria(),
   ],
 };

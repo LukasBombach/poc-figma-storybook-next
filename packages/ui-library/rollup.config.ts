@@ -1,9 +1,13 @@
+import { dirname } from "path";
 import commonjs from "@rollup/plugin-commonjs";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "rollup-plugin-typescript2";
-import ignore from "rollup-plugin-ignore";
+import { terser } from "rollup-plugin-terser";
 import postcss from "rollup-plugin-postcss";
+import ignore from "rollup-plugin-ignore";
+import del from "rollup-plugin-delete";
 import linaria from "linaria/rollup";
+import cssnano from "cssnano";
 import pkg from "./package.json";
 
 export default {
@@ -20,6 +24,9 @@ export default {
   ],
   external: ["react"],
   plugins: [
+    del({
+      targets: [dirname(pkg.main), dirname(pkg.module), dirname(pkg.style)],
+    }),
     ignore(["linaria"]),
     resolve(),
     commonjs(),
@@ -28,7 +35,9 @@ export default {
     }),
     postcss({
       extract: pkg.style,
+      plugins: [cssnano({ preset: "default" })],
     }),
     linaria(),
+    terser(),
   ],
 };

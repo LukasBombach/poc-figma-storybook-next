@@ -5,7 +5,6 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "jsx": "react",
-    "resolveJsonModule": true,
     "strict": true,
     "target": "ESNext",
     "typeRoots": ["node_modules/@types", "types"]

@@ -10,7 +10,7 @@ withText.story = {
   parameters: {
     design: {
       type: "figma",
-      url: "https://www.figma.com/file/NfPcczxt0Verbv5NNvulS8",
-    },
-  },
+      url: "https://www.figma.com/file/NfPcczxt0Verbv5NNvulS8"
+    }
+  }
 };

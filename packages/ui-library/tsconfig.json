@@ -6,8 +6,7 @@
     "moduleResolution": "Node",
     "jsx": "react",
     "strict": true,
-    "target": "ESNext",
-    "typeRoots": ["node_modules/@types", "types"]
+    "target": "ESNext"
   },
   "include": ["src"],
   "exclude": ["src/**/*.stories.tsx"]
